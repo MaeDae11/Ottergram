@@ -5,8 +5,8 @@
 
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
-// get trigger link
 var THUMBNAIL_LINK_SELECTOR = "[data-image-role='trigger']";
+// get trigger link
 
 // take thumbnailsArray and pull out the information I need
 //7
@@ -45,13 +45,19 @@ function arrayMaker(){
     var thumbnailsArray = [].slice.call(thumbnails);
     return thumbnailsArray;
 }
-
 //2*
 function initializeEvent(){
     var thumbnailsArray = arrayMaker();
     //for each time clicked, must make click function//
     thumbnailsArray.forEach(clickTrigger);
 }
-
+function displayImage(){
+    var thumbnailsArray = arrayMaker();
+    var num = Math.floor(Math.random() * 4);
+    var num2 = thumbnailsArray[num];
+    setDetailsForThumb(num2);
+}
+// to make extra random, use if else statement
 //1*
 initializeEvent();
+displayImage();
